@@ -1,15 +1,16 @@
 package com.hellomodule;
 
+import com.facebook.react.turbomodule.core.interfaces.TurboModule;
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.module.annotations.ReactModule;
 
-@ReactModule(name = HelloModule.NAME)
-public class HelloModule extends HelloModuleSpec {
 
+public class HelloModule implements TurboModule {
   public static final String NAME = "HelloModule";
 
-  public HelloModule(ReactApplicationContext reactContext) {
-    super(reactContext);
+  private final ReactApplicationContext reactContext;
+
+  public HelloModule(ReactApplicationContext context) {
+      this.reactContext = context;
   }
 
   @Override
