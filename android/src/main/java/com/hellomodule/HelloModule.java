@@ -1,10 +1,8 @@
 package com.hellomodule;
 
-import com.facebook.react.turbomodule.core.interfaces.TurboModule;
-import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.fbreact.specs.NativeTestSpec;
 
-
-public class HelloModule implements TurboModule {
+public class HelloModule implements NativeTestSpec {
   public static final String NAME = "HelloModule";
 
   private final ReactApplicationContext reactContext;
