@@ -1,0 +1,27 @@
+apply plugin: "com.facebook.react"
+
+buildscript {
+  ext {
+    kotlinVersion = "1.9.22"
+  }
+}
+
+apply plugin: "com.android.library"
+
+android {
+  namespace "com.hellomodule"
+  compileSdkVersion 34
+
+  defaultConfig {
+    minSdkVersion 24
+    targetSdkVersion 34
+  }
+
+  buildFeatures {
+    buildConfig true
+  }
+}
+
+dependencies {
+  implementation "com.facebook.react:react-android"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "native-test",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "react-native": "index.ts",
+  "app.plugin.js": "./app.plugin.js", 
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "codegen": "react-native codegen"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "~19.1.0",
+    "typescript": "~5.9.2",
+    "@react-native-community/cli": "latest"
+  },
+  "codegenConfig": {
+    "name": "HelloModuleSpec",
+    "type": "modules",
+    "jsSrcsDir": "specs",
+    "android": {
+      "javaPackageName": "com.hellomodule"
+    },
+    "ios": {
+      "componentDescriptors": [],
+      "podspecPath": "./ios/hellomodule.podspec"
+    }
+  },
+  
+  
+  "dependencies": {}
+}
