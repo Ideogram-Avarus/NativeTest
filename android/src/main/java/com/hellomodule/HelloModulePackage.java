@@ -1,4 +1,4 @@
-public package com.hellomodule;
+package com.hellomodule;
 
 import com.facebook.react.TurboReactPackage;
 import com.facebook.react.bridge.ReactApplicationContext;
