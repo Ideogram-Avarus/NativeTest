@@ -13,12 +13,14 @@ buildscript {
 
   dependencies {
       classpath "com.android.tools.lint:lint-gradle:31.1.0"
+      classpath "com.facebook.react:react-native-gradle-plugin"
   }
   
 
 }
 
 apply plugin: "com.android.library"
+apply plugin: "com.facebook.react"
 
 android {
   namespace "com.hellomodule"
@@ -48,6 +50,5 @@ android {
 }
 
 dependencies {
-  implementation "com.facebook.react:react-android:0.75.5"
-  implementation "androidx.annotation:annotation:1.8.0"
+  implementation "com.facebook.react:react-android:+"
 }

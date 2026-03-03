@@ -30,7 +30,7 @@ public class HelloModulePackage extends TurboReactPackage {
                     HelloModule.NAME,
                     false,
                     false,
-                    true,
+                    false,
                     false,
                     true
                 )

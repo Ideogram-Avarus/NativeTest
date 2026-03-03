@@ -1,5 +1,6 @@
 package com.hellomodule;
 
+import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.fbreact.specs.NativeTestSpec;
 
 public class HelloModule implements NativeTestSpec {
@@ -9,6 +10,12 @@ public class HelloModule implements NativeTestSpec {
 
   public HelloModule(ReactApplicationContext context) {
       this.reactContext = context;
+  }
+
+  @NonNull
+  @Override
+  public String getName() {
+    return NAME;
   }
 
   @Override
