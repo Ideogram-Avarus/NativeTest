@@ -1,25 +1,32 @@
 package com.hellomodule;
 
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.fbreact.specs.NativeTestSpec;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.turbomodule.core.interfaces.TurboModule;
+import androidx.annotation.NonNull;
 
-public class HelloModule implements NativeTestSpec {
-  public static final String NAME = "HelloModule";
+public class HelloModule extends ReactContextBaseJavaModule implements TurboModule {
 
-  private final ReactApplicationContext reactContext;
+    public static final String NAME = "HelloModule";
 
-  public HelloModule(ReactApplicationContext context) {
-      this.reactContext = context;
-  }
+    public HelloModule(ReactApplicationContext context) {
+        super(context);
+    }
 
-  @NonNull
-  @Override
-  public String getName() {
-    return NAME;
-  }
+    @NonNull
+    @Override
+    public String getName() {
+        return NAME;
+    }
 
-  @Override
-  public String hello(String name) {
-    return "Hello, " + name + "!";
-  }
+    // Your method (no @Override needed since no spec)
+    public String hello(String name) {
+        return "Hello, " + name + "!";
+    }
+
+    // Required by TurboModule - usually empty unless cleanup needed
+    @Override
+    public void invalidate() {
+        // Optional: cleanup resources here
+    }
 }

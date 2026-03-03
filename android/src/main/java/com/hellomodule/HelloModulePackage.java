@@ -1,6 +1,8 @@
 package com.hellomodule;
 
-import com.facebook.react.turbomodule.core.interfaces.TurboModule;
+import androidx.annotation.Nullable;
+
+import com.facebook.react.bridge.NativeModule;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.TurboReactPackage;
 import com.facebook.react.module.model.ReactModuleInfo;
@@ -12,7 +14,7 @@ import java.util.Map;
 public class HelloModulePackage extends TurboReactPackage {
 
     @Override
-    public TurboModule getModule(String name, ReactApplicationContext context) {
+    public @Nullable NativeModule getModule(String name, ReactApplicationContext context) {
         if (name.equals(HelloModule.NAME)) {
             return new HelloModule(context);
         }
@@ -26,13 +28,13 @@ public class HelloModulePackage extends TurboReactPackage {
             map.put(
                 HelloModule.NAME,
                 new ReactModuleInfo(
-                    HelloModule.NAME,
-                    HelloModule.NAME,
-                    false,
-                    false,
-                    false,
-                    false,
-                    true
+                    HelloModule.NAME,               // JS-visible name
+                    HelloModule.class.getName(),    // Full Java class name (with package)
+                    false,                          // canOverrideExistingModule
+                    false,                          // needsEagerInit
+                    false,                          // hasConstants? (change if you add getConstants())
+                    false,                          // isCxxModule
+                    true                            // isTurboModule = true
                 )
             );
             return map;
