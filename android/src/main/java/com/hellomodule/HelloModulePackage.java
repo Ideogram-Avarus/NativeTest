@@ -37,6 +37,4 @@ public class HelloModulePackage extends TurboReactPackage {
       return map;
     };
   }
-} HelloModulePackage {
-    
 }
